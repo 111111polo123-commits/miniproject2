@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Backlog — คลังหนัง ซีรีส์ และเกม</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎬 Backlog</h1>
+    <p>คลังหนัง ซีรีส์ และเกมที่อยากดู-อยากเล่น</p>
+  </header>
+
+  <main>
+    <section class="stats" id="stats"></section>
+
+    <section class="card">
+      <h2 id="form-title">เพิ่มรายการใหม่</h2>
+      <form id="title-form">
+        <input type="hidden" id="id" />
+        <div class="grid">
+          <label>ชื่อเรื่อง *
+            <input id="name" required placeholder="เช่น Inception" />
+          </label>
+          <label>ประเภท *
+            <select id="type" required>
+              <option value="movie">หนัง</option>
+              <option value="series">ซีรีส์</option>
+              <option value="game">เกม</option>
+            </select>
+          </label>
+          <label>แนว
+            <input id="genre" placeholder="เช่น Sci-Fi, RPG" />
+          </label>
+          <label>สถานะ
+            <select id="status">
+              <option value="planned">อยากดู/อยากเล่น</option>
+              <option value="in_progress">กำลังดู/กำลังเล่น</option>
+              <option value="completed">จบแล้ว</option>
+            </select>
+          </label>
+          <label>คะแนน
+            <select id="rating">
+              <option value="">— ไม่ให้คะแนน —</option>
+              <option value="5">★★★★★ (5)</option>
+              <option value="4">★★★★ (4)</option>
+              <option value="3">★★★ (3)</option>
+              <option value="2">★★ (2)</option>
+              <option value="1">★ (1)</option>
+            </select>
+          </label>
+          <label class="full">โน้ต
+            <input id="note" placeholder="บันทึกสั้น ๆ" />
+          </label>
+        </div>
+        <div class="actions">
+          <button type="submit" id="submit-btn">เพิ่ม</button>
+          <button type="button" id="cancel-btn" class="secondary" hidden>ยกเลิก</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <div class="toolbar">
+        <input id="search" placeholder="🔍 ค้นหาชื่อหรือแนว..." />
+        <select id="filter-type">
+          <option value="">ทุกประเภท</option>
+          <option value="movie">หนัง</option>
+          <option value="series">ซีรีส์</option>
+          <option value="game">เกม</option>
+        </select>
+        <select id="filter-status">
+          <option value="">ทุกสถานะ</option>
+          <option value="planned">อยากดู/อยากเล่น</option>
+          <option value="in_progress">กำลังดู/กำลังเล่น</option>
+          <option value="completed">จบแล้ว</option>
+        </select>
+      </div>
+      <ul id="list"></ul>
+    </section>
+  </main>
+
+  <div id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

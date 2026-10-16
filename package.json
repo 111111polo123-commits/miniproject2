@@ -1,0 +1,20 @@
+{
+  "name": "backlog",
+  "version": "1.0.0",
+  "description": "Backlog — เว็บแอปจัดเก็บหนัง ซีรีส์ และเกมที่อยากดู/อยากเล่น (Express + SQLite)",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon --watch server --ignore \"*.db\" server/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^13.0.3",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
